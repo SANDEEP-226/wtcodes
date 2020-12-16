@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding ="UTF-8" standalone="no"?>
+<!DOCTYPE emps [
+    <!ELEMENT emps (emp+)>
+    <!ELEMENT emp (id,name,sal,dept,company)>
+    <!ELEMENT id (#PCDATA)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT sal (#PCDATA)>
+    <!ELEMENT dept (#PCDATA)>
+    <!ELEMENT company (#PCDATA)>
+    <!ATTLIST dept grade CDATA #REQUIRED
+                    block CDATA "A" >
+    <!ATTLIST id prefix CDATA #IMPLIED>              
+    <!ENTITY address "Bank Of American Tech,Gachiboli,hyd">  
+]>
+
+<emps>
+    <emp>
+        <id prefix="INF">101</id>
+        <name>Sandeep</name>
+        <sal>100000</sal>
+        <dept grade="B">Developer</dept>
+        <company>&lt;&address;&gt;</company>
+    </emp>
+    
+    <emp>
+        <id prefix="INF">102</id>
+        <name>Abhishek</name>
+        <sal>200000</sal>
+        <dept grade="C">Web Technology</dept>
+        <company>&lt;&address;&gt;</company>
+    </emp>
+</emps>
